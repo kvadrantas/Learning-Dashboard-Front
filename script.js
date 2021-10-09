@@ -30,7 +30,7 @@ let folders;
 async function renderFiles(folder) {
     // console.log('render files ', folder);
     try {
-        files = await fetch(`https://rolandasseputis.lt:3344/Bit-SQL/json/files:${folder}`);
+        files = await fetch(`https://rolandasseputis.lt:3344/Learning-Dashboard/json/files:${folder}`);
         if (files.ok) {
             files = await files.json();
             files.forEach(async(element, index) => {
@@ -65,7 +65,7 @@ async function renderFiles(folder) {
 
 async function renderFileContent(fileName) {
     try {
-        fileContent = await fetch(`https://rolandasseputis.lt:3344/Bit-SQL/json/fileContent:${fileName}`);
+        fileContent = await fetch(`https://rolandasseputis.lt:3344/Learning-Dashboard/json/fileContent:${fileName}`);
         if (fileContent.ok) {
             fileContent = await fileContent.json();
             fileContent = fileContent.split('\n').join('<br>');
@@ -88,7 +88,7 @@ async function renderFileContent(fileName) {
 
 
 try {
-    folders = await fetch('https://rolandasseputis.lt:3344/Bit-SQL/json/folders');
+    folders = await fetch('https://rolandasseputis.lt:3344/Learning-Dashboard/json/folders');
     if (folders.ok) {
         folders = await folders.json();
         folders.forEach((element, index) => {
